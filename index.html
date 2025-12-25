@@ -1069,7 +1069,9 @@
                 </div>
                 <div class="contact-form">
                     <div class="form-header">Send Enquiry</div>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/mbdjrkpd" method="POST">
+                        <input type="hidden" name="_subject" value="New Enquiry — Austral Interlink">
+                        <input type="hidden" name="_next" value="https://australinterlink.com/thank-you.html">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1118,12 +1120,6 @@
             var d = 'australinterlink.com';
             document.getElementById('email-display').textContent = u + '@' + d;
         })();
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your enquiry. We will respond within 24 hours.');
-            this.reset();
-        });
     </script>
 </body>
 </html>
