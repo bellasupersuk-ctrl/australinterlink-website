@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Austral Interlink International | Established 2009</title>
+    <meta
+      name="description"
+      content="Austral Interlink International. Premium carpet care and low-moisture encapsulation specialists serving South Australia since 2009."
+    />
+    <meta property="og:title" content="Austral Interlink International" />
+    <meta
+      property="og:description"
+      content="Established 2009. South Australia. Premium carpet care transition opportunity."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts: Cormorant Garamond (Display) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CSS Reset & Variables --- */
+      :root {
+        --color-cream: #faf8f5;
+        --color-stone: #1c1917;
+        --color-stone-600: #57534e;
+        --color-stone-300: #d6d3d1;
+        --color-amber: #92400e;
+        --color-gold: #a16207;
+        --color-gold-light: #fef3c7;
+
+        --font-display: "Cormorant Garamond", serif;
+        --font-body: "Inter", sans-serif;
+
+        --spacing-xs: 0.5rem; /* 8px */
+        --spacing-sm: 1rem; /* 16px */
+        --spacing-md: 2rem; /* 32px */
+        --spacing-lg: 4rem; /* 64px */
+        --spacing-xl: 8rem; /* 128px */
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--color-stone);
+        background-color: var(--color-cream);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* --- Typography --- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      .heading-xl {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        letter-spacing: -0.02em;
+      }
+
+      .heading-lg {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .heading-md {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+        color: var(--color-stone);
+      }
+
+      .text-body {
+        font-size: 1rem;
+        color: var(--color-stone-600);
+        max-width: 65ch;
+      }
+
+      .text-body-lg {
+        font-size: 1.125rem;
+        color: var(--color-stone-600);
+        max-width: 60ch;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        color: var(--color-stone-600);
+      }
+
+      /* --- Utilities --- */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-sm);
+      }
+
+      .grid {
+        display: grid;
+        gap: var(--spacing-md);
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 768px) {
+        .grid-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .grid-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .section-padding {
+          padding: var(--spacing-lg) 0;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .section-padding {
+          padding: var(--spacing-xl) 0;
+        }
+      }
+
+      .section-padding {
+        padding: var(--spacing-lg) 0;
+      }
+
+      .noise-bg {
+        position: relative;
+        background-color: var(--color-stone);
+        color: var(--color-cream);
+      }
+
+      .noise-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      .content-relative {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: var(--color-amber);
+        color: white;
+        font-family: var(--font-body);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--color-gold);
+      }
+
+      .accent-text {
+        color: var(--color-amber);
+        font-weight: 600;
+      }
+
+      /* --- Components --- */
+      .badge {
+        display: inline-block;
+        border: 1px solid var(--color-stone-600);
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-stone-300);
+      }
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-amber);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        color: var(--color-stone-600);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .stat-label-light {
+        color: var(--color-stone-300);
+      }
+
+      .card {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.03
+        ); /* Subtle glass effect for dark bg */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: var(--spacing-md);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .card-light {
+        background: white;
+        border: 1px solid var(--color-stone-300);
+        padding: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .card-light:hover {
+        border-color: var(--color-amber);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .icon-box {
+        width: 48px;
+        height: 48px;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-amber);
+      }
+
+      /* --- Fade Animation --- */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* --- Specific Section Styles --- */
+
+      /* Hero */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-lg) 0;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: var(--spacing-md);
+        flex-wrap: wrap;
+      }
+
+      /* Legacy */
+      .legacy-grid {
+        align-items: center;
+      }
+
+      .legacy-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+      }
+
+      .metric-box {
+        background: var(--color-cream);
+        padding: var(--spacing-sm);
+        border: 1px solid var(--color-stone-300);
+        text-align: center;
+      }
+
+      /* Methodology */
+      .method-card h3 {
+        color: var(--color-cream);
+        margin-top: var(--spacing-sm);
+      }
+      .method-card p {
+        color: var(--color-stone-300);
+        font-size: 0.9rem;
+      }
+
+      /* Territory */
+      .suburb-list {
+        margin-top: var(--spacing-sm);
+        font-size: 0.85rem;
+        color: var(--color-stone-600);
+        line-height: 1.5;
+      }
+
+      /* Testimonial */
+      .quote-icon {
+        font-size: 4rem;
+        color: var(--color-stone-300);
+        font-family: var(--font-display);
+        line-height: 1;
+      }
+
+      .testimonial-text {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-style: italic;
+        color: var(--color-stone);
+        margin: var(--spacing-sm) 0;
+      }
+
+      /* Business Notice */
+      .business-notice {
+        background-color: var(--color-gold-light);
+        border-left: 4px solid var(--color-amber);
+        padding: var(--spacing-lg) 0;
+      }
+
+      .notice-badge {
+        background-color: var(--color-amber);
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: inline-block;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      /* Contact */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+      }
+
+      .form-group {
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--color-stone);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--color-stone-300);
+        background: white;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-stone);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--color-amber);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--color-stone);
+        color: var(--color-stone-300);
+        padding: var(--spacing-md) 0;
+        text-align: center;
+        font-size: 0.875rem;
+        border-top: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO SECTION -->
+    <header class="hero noise-bg">
+      <div class="container hero-content content-relative">
+        <div class="badge fade-in">Established 2009 · South Australia</div>
+        <h1 class="heading-xl fade-in" style="transition-delay: 0.1s">
+          Austral Interlink<br />
+          <span style="font-weight: 700; color: white">International</span>
+        </h1>
+        <p
+          class="text-body-lg fade-in"
+          style="
+            transition-delay: 0.2s;
+            color: var(--color-stone-300);
+            margin: var(--spacing-md) auto;
+          "
+        >
+          Specialised low-moisture carpet preservation for South Australia's
+          premium commercial and residential sectors.
+        </p>
+
+        <a
+          href="#contact"
+          class="btn fade-in"
+          style="transition-delay: 0.3s; margin-top: var(--spacing-md)"
+          >Enquire Now</a
+        >
+
+        <div class="hero-stats fade-in" style="transition-delay: 0.4s">
+          <div class="stat-item">
+            <span class="stat-number">15</span>
+            <span class="stat-label stat-label-light">Years</span>
+          </div>
+          <!-- Vertical Divider CSS hack or just spacing -->
+          <div
+            style="
+              width: 1px;
+              background: rgba(255, 255, 255, 0.1);
+              margin: 0 var(--spacing-sm);
+            "
+          ></div>
+          <div class="stat-item">
+            <span class="stat-number">995</span>
+            <span class="stat-label stat-label-light">Clients</span>
+          </div>
+          <div
+            style="
+              width: 1px;
+              background: rgba(255, 255, 255, 0.1);
+              margin: 0 var(--spacing-sm);
+            "
+          ></div>
+          <div class="stat-item">
+            <span class="stat-number">53.6%</span>
+            <span class="stat-label stat-label-light">Repeat Rate</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- LEGACY SECTION -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="grid grid-2 legacy-grid">
+          <div class="fade-in">
+            <h2 class="heading-lg">
+              Built on trust.<br />Sustained by results.
+            </h2>
+            <p class="text-body" style="margin-bottom: var(--spacing-sm)">
+              Founded by Sukninder Singh Sangedha (Suki) in 2009, Austral
+              Interlink International has operated continuously for over 15
+              years. The business was built on a philosophy of technical
+              excellence and relationship longevity, serving a curated database
+              of 995 clients across metropolitan and regional South Australia.
+            </p>
+            <p class="text-body">
+              With an independently verified repeat rate of 53.6%—significantly
+              outperforming the industry benchmark of 40%—the business
+              represents a stable, high-value asset with deep community
+              integration.
+            </p>
+          </div>
+          <div class="legacy-metrics fade-in" style="transition-delay: 0.2s">
+            <div class="card-light">
+              <div class="stat-number" style="font-size: 2rem">2009</div>
+              <div class="stat-label">Established</div>
+            </div>
+            <div class="card-light">
+              <div class="stat-number" style="font-size: 2rem">995</div>
+              <div class="stat-label">Total Clients</div>
+            </div>
+            <div class="card-light">
+              <div class="stat-number" style="font-size: 2rem">53.6%</div>
+              <div class="stat-label">Repeat Rate</div>
+              <div class="text-sm" style="margin-top: 5px; opacity: 0.7">
+                Benchmark: 40%
+              </div>
+            </div>
+            <div class="card-light">
+              <div class="stat-number" style="font-size: 2rem">$238</div>
+              <div class="stat-label">Avg Job Value</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY SECTION -->
+    <section class="section-padding noise-bg">
+      <div class="container content-relative">
+        <h2 class="heading-lg" style="color: white; text-align: center">
+          Walk On Dry™
+        </h2>
+        <p
+          class="text-body-lg"
+          style="
+            color: var(--color-stone-300);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+          "
+        >
+          Our proprietary low-moisture encapsulation methodology delivers
+          superior hygiene results with zero downtime, safeguarding asset
+          longevity.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card method-card fade-in">
+            <svg
+              class="icon-box"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h3>Immediate Use</h3>
+            <p>
+              Spaces are safe for traffic immediately after service, eliminating
+              downtime for commercial clients.
+            </p>
+          </div>
+          <div class="card method-card fade-in" style="transition-delay: 0.1s">
+            <svg
+              class="icon-box"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h3>Fibre Safe</h3>
+            <p>
+              Encapsulation polymer surrounds soil particles without saturating
+              the backing, preventing wick-back and mold.
+            </p>
+          </div>
+          <div class="card method-card fade-in" style="transition-delay: 0.2s">
+            <svg
+              class="icon-box"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+              ></path>
+            </svg>
+            <h3>Deep Clean</h3>
+            <p>
+              Agitation lifts pile and restores appearance retention in
+              high-traffic commercial zones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERRITORY SECTION -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg)">
+          <h2 class="heading-lg">Metropolitan & Regional Coverage</h2>
+          <p class="text-body" style="margin: 0 auto">
+            Dominant market presence across three key geographic clusters.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card-light fade-in">
+            <h3 class="heading-md">Metropolitan Adelaide</h3>
+            <div
+              class="stat-number"
+              style="font-size: 2.5rem; margin-bottom: var(--spacing-xs)"
+            >
+              328
+            </div>
+            <div class="stat-label">Active Clients</div>
+            <div class="suburb-list">
+              Happy Valley, Morphett Vale, Blackwood, Belair, Pasadena,
+              Panorama, Flagstaff Hill, Aberfoyle Park.
+            </div>
+          </div>
+          <div class="card-light fade-in" style="transition-delay: 0.1s">
+            <h3 class="heading-md">Fleurieu Peninsula</h3>
+            <div
+              class="stat-number"
+              style="font-size: 2.5rem; margin-bottom: var(--spacing-xs)"
+            >
+              84
+            </div>
+            <div class="stat-label">Active Clients</div>
+            <div class="suburb-list">
+              Victor Harbor, Encounter Bay, Goolwa, Strathalbyn, Myponga,
+              Normanville, Yankalilla.
+            </div>
+          </div>
+          <div class="card-light fade-in" style="transition-delay: 0.2s">
+            <h3 class="heading-md">Yorke Peninsula</h3>
+            <div
+              class="stat-number"
+              style="font-size: 2.5rem; margin-bottom: var(--spacing-xs)"
+            >
+              24
+            </div>
+            <div class="stat-label">Active Clients</div>
+            <div class="suburb-list">
+              Maitland, Ardrossan, Kadina, Moonta, Crystal Brook, Wallaroo, Port
+              Wakefield.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section-padding" style="background-color: #f5f5f4">
+      <div class="container" style="text-align: center; max-width: 800px">
+        <div class="quote-icon">“</div>
+        <p class="testimonial-text fade-in">
+          We've used Suki for over a decade. He knows the premises better than
+          we do, and the carpets look brand new every time.
+        </p>
+        <div
+          class="text-sm fade-in"
+          style="margin-top: var(--spacing-sm); font-weight: 500"
+        >
+          — Long-term client, Victor Harbor
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS NOTICE -->
+    <section class="business-notice">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center">
+          <div class="fade-in">
+            <span class="notice-badge">Business Announcement</span>
+            <h2 class="heading-lg" style="margin-bottom: var(--spacing-sm)">
+              Ownership Transition in Progress
+            </h2>
+            <p class="text-body-lg" style="color: var(--color-stone)">
+              After 15 years of dedicated service, Founder Sukninder Singh is
+              transitioning to medical retirement. We are currently seeking an
+              established operator or industry professional to acquire the
+              client database and continue the legacy of service excellence.
+            </p>
+          </div>
+          <div
+            class="fade-in"
+            style="
+              transition-delay: 0.2s;
+              background: rgba(255, 255, 255, 0.5);
+              padding: var(--spacing-md);
+              border-radius: 4px;
+            "
+          >
+            <p
+              class="text-body"
+              style="font-weight: 500; color: var(--color-stone)"
+            >
+              This opportunity is best suited for:
+            </p>
+            <ul
+              style="
+                margin-top: var(--spacing-sm);
+                margin-left: var(--spacing-sm);
+              "
+            >
+              <li style="margin-bottom: 0.5rem">
+                • Regional territory expansion
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                • Franchise territory seeding
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                • Strategic acquisition for density
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="contact-info fade-in">
+            <h2 class="heading-lg">Get in touch</h2>
+            <p class="text-body" style="margin-bottom: var(--spacing-md)">
+              For service bookings or confidential business enquiries, please
+              contact us directly.
+            </p>
+
+            <div class="contact-item">
+              <svg
+                class="icon-box"
+                style="width: 24px; height: 24px; margin-bottom: 0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <span
+                class="text-body-lg"
+                style="color: var(--color-stone); font-weight: 600"
+                >04XX XXX XXX</span
+              >
+              <!-- Placeholder for phone as per instructions to not specific phone unless provided, using user context imply just build the structure. 
+                             Wait, USER_REQUEST didn't provide a specific phone number. 
+                             I will use a placeholder or check context? 
+                             Context: "Make generated code complete". 
+                             The prompt didn't give a phone number. I will leave a clear placeholder or generic. 
+                             Actually, looking at the user request: "Phone number visible without scrolling...". 
+                             I'll put "0430 803 762" (Randomly generated? No, better use a placeholder like [Phone Number] or 04XX...).
+                             Wait, usually I shouldn't hallucinate. I'll use "0412 345 678" as example or just simple text placeholder if not known. 
+                             Re-reading: "Founder: Sukninder Singh Sangedha (Suki)". No phone listed.
+                             I will use a noticeably placeholder format so they can fill it. -->
+              <span
+                style="
+                  font-size: 0.8rem;
+                  color: var(--color-amber);
+                  margin-left: 10px;
+                "
+                >(Click to Call)</span
+              >
+            </div>
+
+            <div class="contact-item">
+              <svg
+                class="icon-box"
+                style="width: 24px; height: 24px; margin-bottom: 0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <span class="text-body-lg" style="color: var(--color-stone)"
+                >enquiries@australinterlink.com.au</span
+              >
+            </div>
+
+            <div class="contact-item">
+              <svg
+                class="icon-box"
+                style="width: 24px; height: 24px; margin-bottom: 0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              <span class="text-body-lg" style="color: var(--color-stone)"
+                >ABN 44 721 263 103</span
+              >
+            </div>
+          </div>
+
+          <form
+            class="fade-in"
+            style="transition-delay: 0.2s"
+            onsubmit="event.preventDefault(); alert('In a real deployment, this would send an email.');"
+          >
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Enquiry Type</label>
+              <select class="form-control">
+                <option>Service Enquiry</option>
+                <option>Business/Acquisition Enquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer noise-bg">
+      <div class="container">
+        <p style="opacity: 0.8; margin-bottom: 0.5rem">
+          Austral Interlink International
+        </p>
+        <p style="opacity: 0.5">&copy; 2009–2025 · ABN 44 721 263 103</p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth Scroll & Intersection Observer for Fade-in effects
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Only animate once
+            }
+          });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll(".fade-in");
+        fadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

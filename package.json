@@ -1,0 +1,8 @@
+{
+  "name": "australinterlink-website",
+  "version": "1.0.0",
+  "description": "Austral Interlink International - Premium Carpet & Upholstery Care",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
