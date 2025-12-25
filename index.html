@@ -156,6 +156,14 @@
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 480px) {
+            .hero-badge {
+                font-size: 0.5rem;
+                letter-spacing: 0.15em;
+            }
         }
 
         .hero h1 {
@@ -1028,7 +1036,7 @@
                         </div>
                         <div class="contact-channel">
                             <span class="channel-label">Email</span>
-                            <span class="channel-value">suki@australinterlink.com</span>
+                            <span class="channel-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a4a2bcbe97b6a2a4a3a5b6bbbeb9a3b2a5bbbeb9bcf9b4b8ba">[email&#160;protected]</a></span>
                         </div>
                         <div class="contact-channel">
                             <span class="channel-label">Entity</span>
@@ -1080,12 +1088,5 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your enquiry. We will respond within 24 hours.');
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.getElementById('c
