@@ -190,8 +190,9 @@
         }
 
         .hero-metrics {
-            display: flex;
-            gap: 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
         }
@@ -216,6 +217,30 @@
             text-transform: uppercase;
             color: var(--text-muted);
             margin-top: 0.5rem;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 900px) {
+            .hero-metrics {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-metrics {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .hero-metric .value {
+                font-size: 2.5rem;
+            }
+            
+            .hero-metric .label {
+                font-size: 0.5625rem;
+                letter-spacing: 0.1em;
+            }
         }
 
         /* Status Bar */
@@ -742,11 +767,6 @@
             .method-grid,
             .territory-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .hero-metrics {
-                flex-wrap: wrap;
-                gap: 2rem;
             }
 
             .section-header {
