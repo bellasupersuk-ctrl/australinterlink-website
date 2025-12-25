@@ -794,7 +794,8 @@
             }
 
             .hero {
-                padding: 6rem 1.5rem 4rem;
+                min-height: auto;
+                padding: 5rem 1.5rem 3rem;
             }
 
             .status-bar {
@@ -1056,7 +1057,7 @@
                         </div>
                         <div class="contact-channel">
                             <span class="channel-label">Email</span>
-                            <span class="channel-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a4a2bcbe97b6a2a4a3a5b6bbbeb9a3b2a5bbbeb9bcf9b4b8ba">[email&#160;protected]</a></span>
+                            <span class="channel-value" id="email-display"></span>
                         </div>
                         <div class="contact-channel">
                             <span class="channel-label">Entity</span>
@@ -1108,5 +1109,19 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        document.getElementById('c
+    <script>
+        // Render email dynamically to prevent scraping
+        (function() {
+            var u = 'suki';
+            var d = 'australinterlink.com';
+            document.getElementById('email-display').textContent = u + '@' + d;
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry. We will respond within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
